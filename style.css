@@ -1,0 +1,393 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* =========================
+   NAVBAR (PROFESSIONAL)
+========================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: linear-gradient(90deg, #023e8a, #0077b6);
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background:
+        linear-gradient(
+            rgba(0, 119, 182, 0.75),
+            rgba(0, 180, 216, 0.75)
+        ),
+        url("images/banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    animation: fadeSlide 1.2s ease;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Header animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HOMEPAGE PLACE CARDS
+========================= */
+.places-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.place-card {
+    background-color: white;
+    width: 280px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.35s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+
+.place-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.place-card:hover img {
+    transform: scale(1.12);
+}
+
+.place-card h2 {
+    padding: 15px 15px 5px;
+}
+
+.place-card p {
+    padding: 0 15px 20px;
+    color: #555;
+}
+
+/* =========================
+   DETAIL PAGE CONTAINER
+========================= */
+.detail {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Section title */
+.section-title {
+    font-size: 24px;
+    margin: 30px 0 15px;
+    color: #023e8a;
+    border-left: 5px solid #0077b6;
+    padding-left: 12px;
+}
+
+/* =========================
+   CARD GRID (DETAIL PAGES)
+========================= */
+.card-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* Small reusable card */
+.small-card {
+    background-color: white;
+    width: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: all 0.35s ease;
+}
+
+.small-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+
+.small-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.small-card:hover img {
+    transform: scale(1.12);
+}
+
+.small-card h3 {
+    padding: 12px 12px 5px;
+    font-size: 18px;
+}
+
+.small-card p {
+    padding: 0 12px 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================
+   DETAIL PAGE TEXT
+========================= */
+.detail p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+.detail a {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0077b6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 768px) {
+
+    .places-container,
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+/* =========================
+   WHY CHOOSE US SECTION
+========================= */
+.features {
+    background: #f8f9fa;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #023e8a;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background: white;
+    width: 240px;
+    padding: 25px 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    transition: all 0.35s ease;
+}
+
+.feature-box h3 {
+    margin: 12px 0 8px;
+    color: #0077b6;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+
+/* ================= FEEDBACK SECTION ================= */
+
+.feedback-section {
+  background: #f4f8fb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.feedback-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.feedback-section p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.feedback-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.feedback-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.feedback-form button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.feedback-form button:hover {
+  background: #005f8f;
+}
+
+.feedback-msg {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+}
+/* ===== FEEDBACK DISPLAY ===== */
+
+.feedback-list {
+  max-width: 600px;
+  margin: 20px auto 0;
+  text-align: left;
+}
+
+.feedback-item {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #0077b6;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feedback-item h4 {
+  margin-bottom: 5px;
+  color: #023e8a;
+}
+
+.feedback-item p {
+  margin: 0;
+  color: #444;
+  font-size: 14px;
+}

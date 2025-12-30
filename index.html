@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Places</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🌍 TravelX</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#explore">Places</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Explore Travel Destinations</h1>
+    <p>Click on a place to explore details</p>
+</header>
+
+<section class="places-container">
+
+    <!-- Junagadh Card -->
+    <a href="places/junagadh.html" class="place-card">
+        <img src="images/junagadh.jpg" alt="Junagadh">
+        <h2>Junagadh</h2>
+        <p>Historical city of Gujarat</p>
+    </a>
+
+    <!-- Goa Card -->
+    <a href="places/goa.html" class="place-card">
+        <img src="images/goa.jpg" alt="Goa">
+        <h2>Goa</h2>
+        <p>Beaches & nightlife</p>
+    </a>
+<a href="places/himachal.html" class="place-card">
+  <img src="images/himachal1.jpg" alt="Himachal Pradesh">
+  <h2>Himachal Pradesh</h2>
+  <p>Land of mountains and valleys</p>
+</a>
+
+<a href="places/rajasthan.html" class="place-card">
+  <img src="images/rajasthan1.jpg" alt="Rajasthan">
+  <h2>Rajasthan</h2>
+  <p>Royal heritage and deserts</p>
+</a>
+
+</section>
+
+<section class="features">
+    <h2>Why Choose TravelX?</h2>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            🌍 <h3>Trusted Destinations</h3>
+            <p>Carefully selected travel places</p>
+        </div>
+
+        <div class="feature-box">
+            💸 <h3>Budget Friendly</h3>
+            <p>Travel that fits your budget</p>
+        </div>
+
+        <div class="feature-box">
+            📸 <h3>Beautiful Locations</h3>
+            <p>Stunning views & memories</p>
+        </div>
+
+        <div class="feature-box">
+            🚀 <h3>Easy Navigation</h3>
+            <p>Simple & smooth experience</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FEEDBACK SECTION ================= -->
+<section id="feedback" class="feedback-section">
+  <h2>We Value Your Feedback</h2>
+  <p>Tell us about your experience with TravelX</p>
+
+  <form id="feedbackForm" class="feedback-form">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Feedback" required></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+  <p id="feedbackMsg" class="feedback-msg"></p>
+  <h3 style="margin-top:40px;">Recent Feedback</h3>
+<div id="feedbackList" class="feedback-list"></div>
+
+</section>
+
+<footer>
+    <p>© 2025 Travel Website | Made by Vedant</p>
+</footer>
+
+<script>
+  const form = document.getElementById("feedbackForm");
+  const feedbackList = document.getElementById("feedbackList");
+
+  // Load saved feedback on page load
+  function loadFeedback() {
+    const data = JSON.parse(localStorage.getItem("travelxFeedback")) || [];
+    feedbackList.innerHTML = "";
+
+    data.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "feedback-item";
+      div.innerHTML = `
+        <h4>${item.name}</h4>
+        <p>${item.message}</p>
+      `;
+      feedbackList.appendChild(div);
+    });
+  }
+
+  // Save feedback
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+
+    const data = JSON.parse(localStorage.getItem("travelxFeedback")) || [];
+    data.unshift({ name, message });
+    localStorage.setItem("travelxFeedback", JSON.stringify(data));
+
+    form.reset();
+    loadFeedback();
+  });
+
+  // Load existing feedback when page opens
+  loadFeedback();
+</script>
+
+
+</body>
+</html>
