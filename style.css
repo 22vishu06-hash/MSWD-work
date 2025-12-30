@@ -391,3 +391,52 @@ footer {
   color: #444;
   font-size: 14px;
 }
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+
+    /* Header text */
+    header h1 {
+        font-size: 26px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    /* Place cards on homepage */
+    .places-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Card grids on detail pages */
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Cards full width */
+    .place-card,
+    .small-card {
+        width: 90%;
+    }
+
+    /* Feedback form */
+    .feedback-form {
+        width: 90%;
+    }
+
+    /* Section padding */
+    .detail {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    /* Back link spacing */
+    .detail a {
+        margin-top: 20px;
+        display: inline-block;
+    }
+}
